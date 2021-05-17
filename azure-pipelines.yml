@@ -6,12 +6,12 @@ variables:
   dotnetSdkVersion: '3.1.300'
   
 schedules:
-- cron: '18 23 * * *'
+- cron: '20 23 * * *'
   displayName: Deploy every day at 4 P.M.
   branches:
     include:
     - casestudy
-  always: false 
+  always: true 
 
 stages:
 - stage: 'Build'
