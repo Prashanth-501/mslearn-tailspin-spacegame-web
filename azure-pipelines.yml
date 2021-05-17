@@ -6,18 +6,18 @@ variables:
   dotnetSdkVersion: '3.1.300'
   releaseBranchName: 'casestudy'
   
-schedules:
-- cron: '28 23 * * *'
-  displayName: Deploy every day at 4 P.M.
-  branches:
-    include:
-    - casestudy
-  always: false
+#schedules:
+#- cron: '28 23 * * *'
+#  displayName: Deploy every day at 4 P.M.
+#  branches:
+#    include:
+#    - casestudy
+#  always: false
 
 stages:
 - stage: 'Build'
   displayName: 'Build the web application'
-  condition: eq(variables['Build.Reason'], 'Schedule')
+ # condition: eq(variables['Build.Reason'], 'Schedule')
   jobs: 
   - job: 'Build'
     displayName: 'Build job'
