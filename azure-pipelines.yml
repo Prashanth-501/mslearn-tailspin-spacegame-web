@@ -4,14 +4,15 @@ trigger:
 variables:
   buildConfiguration: 'Release'
   dotnetSdkVersion: '3.1.300'
+  releaseBranchName: 'casestudy'
   
 schedules:
-- cron: '20 23 * * *'
+- cron: '28 23 * * *'
   displayName: Deploy every day at 4 P.M.
   branches:
     include:
     - casestudy
-  always: true 
+  always: false
 
 stages:
 - stage: 'Build'
